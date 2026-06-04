@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Funnel Sans", system-ui, sans-serif;
+  --font-display: "Funnel Sans", system-ui, sans-serif;
+  --font-mono: "Funnel Sans", system-ui, sans-serif;
+
+  --color-green-black: #151916;
+  --color-off-white: #f0f2ec;
+  --color-grey: #a7b2a7;
+  --color-dark-grey: #3d4a41;
+  --color-accent: #c4ffb1;
+  --color-accent-hover: #b0f099;
+  --color-pure-white: #ffffff;
+  --color-pure-black: #000000;
+
+  /* Legacy aliases used in theme tokens */
+  --color-paper: #f0f2ec;
+  --color-ink: #151916;
+  --color-gold: #c4ffb1;
+}
+
+html {
+  font-family: var(--font-sans);
+  background: var(--color-green-black);
+  color: var(--color-off-white);
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.45s ease-out both;
+}
+
+.animate-ticker {
+  animation: ticker 30s linear infinite;
+}
